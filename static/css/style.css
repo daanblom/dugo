@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "OSBI";
+  src: URL("../fonts/OpenSauceOne-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OS";
+  src: URL("../fonts/OpenSauceOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OSI";
+  src: URL("../fonts/OpenSauceOne-Italic.ttf") format("truetype");
+}
+
+body * {
+  font-family: "OS";
+}
+
+.logo {
+	font-family: "OSBI";
+  font-size: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-right:auto;
+  line-height: 42px;
+}
+
+h1 {
+  font-family: "OSBI";
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+h2, title {
+  font-family: "OSBI";
+  text-transform: uppercase;
+  font-size 18px;
+  color:black;
+}
+
+h3, a {
+  font-family: "OS";
+  color: black;
+  text-decoration: none;
+}
+
+.link {
+  font-family: "OSI";
+}
+.banner {
+  height: 300px;
+  width: 100%;
+  background-image: url("../img/header.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.nav-link {
+  color: grey;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.image {
+  margin:auto;
+}
+
+.footer {
+  font-family: "OSI";
+}
