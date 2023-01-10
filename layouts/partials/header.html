@@ -1,5 +1,5 @@
 <div id="nav-border" class="container">
-    <nav id="nav" class="nav justify-content-center"><div class="logo" href="/">{{ .Site.Title }}</div>
+    <nav id="nav" class="nav justify-content-center"><a class="logo" style="text-decoration:none;" href="/">{{ .Site.Title }}</a>
         {{ range .Site.Menus.main }}
         <a class="nav-link" href="{{ .URL }}">
         {{ if .Pre }}
