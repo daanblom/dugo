@@ -90,6 +90,10 @@ h2,{
   padding-bottom: 10px;
 }
 
+a.nav-link {
+  text-align: center;
+}
+
 .nav-link {
   font-family: "OS" !important;
   color: grey;
@@ -97,4 +101,9 @@ h2,{
 
 .nav-link:hover {
   color:black;
-};
+}
+
+.tags {
+  padding-top: 10px;
+}
+
