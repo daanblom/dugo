@@ -1,0 +1,13 @@
+<div class="textheader">
+
+	A collection of (short) write-ups on various subjects like:
+
+{{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+{{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+	<div class="stag">
+		<a href={{ .RelPermalink }}> {{$name }}</a>
+	</div>
+{{end}}
+{{end}}
+
+</div>

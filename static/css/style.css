@@ -107,3 +107,16 @@ a.nav-link {
   padding-top: 10px;
 }
 
+.textheader {
+  font-family: "OSI";
+  font-size: 24px;
+  border: 1px solid black;
+  padding: 16px;
+  border-radius: 2px;
+  display: inline-flex;
+  width: 100%;
+}
+
+.stag {
+  padding-left: 10px;
+}

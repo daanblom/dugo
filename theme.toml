@@ -4,18 +4,12 @@
 name = "Dugo"
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = []
+description = "A clean hugo template using Bootstrap for its CSS"
+homepage = "http://github.com/daanblom/dugo"
+tags = [HUGO, Minimal, Bootstrap]
 features = []
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Daan Blom"
+  homepage = "https://www.daanblom.com"
