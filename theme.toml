@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
 description = "A clean hugo template using Bootstrap for its CSS"
 homepage = "http://github.com/daanblom/dugo"
-tags = [HUGO, Minimal, Bootstrap]
+tags = ["HUGO", "Minimal", "Bootstrap", "Portfolio"]
 features = []
 min_version = "0.41.0"
 
