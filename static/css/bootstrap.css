@@ -21,6 +21,18 @@
   .logo {
     margin: auto;
   }
+
+  .text-column-left {
+    width: 50%;
+  }
+  
+  .text-column-right {
+    width: 50%;
+  }
+
+  .boxtitle {
+    margin-top: 0px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -32,6 +44,18 @@
 
   .logo {
     margin: auto;
+  }
+
+  .text-column-left {
+    width: 50%;
+  }
+  
+  .text-column-right {
+    width: 50%;
+  }
+
+  .boxtitle {
+    margin-top: 0px;
   }
 }
 
@@ -48,6 +72,16 @@
     margin-right: auto;
   }
 
+  .text-column-left {
+    width: 33.3333%;
+  }
+  
+  .text-column-right {
+    width: 33.3333%;
+  }
+
+  .boxtitle {
+    margin-top: -14px;
 }
 
 @media (min-width: 992px) {

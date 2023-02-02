@@ -20,12 +20,36 @@
   src: URL("../fonts/OpenSauceOne-Italic.ttf") format("truetype");
 }
 
+img[src$='#center'] {
+  display: block;
+  border-radius: 4px;
+  margin: 1.0rem auto;
+  width: 100%;
+  height: auto;
+}
 
 img[src$='#img'] {
   border-radius: 4px;
   object-fit: cover;
   width: 100%;
 }
+
+
+img[src$='#imgl'] {
+  border-radius: 4px;
+  object-fit: cover;
+  width: 50%;
+  float: left;
+}
+
+img[src$='#imgr'] {
+  border-radius: 4px;
+  object-fit: cover;
+  width: 50%;
+  float: right;
+  padding: 10px;
+}
+
 
 body * {
   font-family: "OS";
@@ -50,6 +74,7 @@ body * {
 
 a {
   font-family: "OSI";
+  color: var(--white);
 }
 
 h1 {
@@ -62,6 +87,7 @@ h2 {
   font-family: "OSBI";
   text-transform: uppercase;
   font-size: 22px;
+  color: black;
 }
 
 .title {
@@ -101,10 +127,17 @@ h2 {
   animation: gradient-animation 18s ease infinite;
 }
 
+.bannertxt {
+  padding-left: 22px;
+  padding-top: 6px;
+  color: var(--black);
+}
+
 .boxtitle {
   font-size: 36px;
   color: var(--black);
   margin-bottom: 14px;
+  margin-top: -14px;
 }
 
 .two-column {
@@ -177,10 +210,15 @@ a.nav-link {
 .nav-link {
   font-family: "OS" !important;
   text-decoration: none;
+  color: var(--white);
 }
 
 .nav-link:hover {
   color: var(--dgreen);
+}
+
+p {
+  color: var(--white);
 }
 
 div {
@@ -260,34 +298,10 @@ div {
   html body {
   background-color: var(--black);
   }
-
-  h1, h2, h3, p, div {
-  color: var(--white)
-  }
-
-  a {
-  color: var(--white);
-  }
-  
-  .nav-link {
-  color: var(--white);  
-  }
 }
 
 @media (prefers-color-scheme: light) {
   html body {
   background-color: var(--white);
-  }
-
-  h1, h2, h3, p, div, a {
-  color: var(--black)
-  }
-
-  a {
-  color: var(--black);
-  }
-  
-  .nav-link {
-  color: var(--black);  
   }
 }
