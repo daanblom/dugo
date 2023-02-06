@@ -25,6 +25,9 @@ img[src$='#img'] {
   border-radius: 4px;
   object-fit: cover;
   width: 100%;
+  background: linear-gradient(300deg, grey, lightgrey;
+  background-size: 100% 100%;
+  animation: gradient-animation 18s ease infinite;
 }
 
 body * {
