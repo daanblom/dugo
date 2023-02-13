@@ -1,8 +1,10 @@
 :root {
-  --white: #f9fbfb;
-  --black: #130e13;
-  --lgreen: #c0ffbb;
-  --dgreen: #a8ffa1;
+  --white: #f9fbfbFF;
+  --black: #130e13FF;
+  --lgreen: #c0ffbbFF;
+  --dgreen: #a8ffa1FF;
+  --lgrey: #201c2077;
+  --dgrey: #201b2077;
 }
 
 @font-face {
@@ -25,9 +27,6 @@ img[src$='#img'] {
   border-radius: 4px;
   object-fit: cover;
   width: 100%;
-  background: linear-gradient(300deg, grey, lightgrey;
-  background-size: 100% 100%;
-  animation: gradient-animation 18s ease infinite;
 }
 
 body * {
@@ -102,6 +101,18 @@ h2 {
   background: linear-gradient(300deg, var(--lgreen), var(--dgreen));
   background-size: 100% 100%;
   animation: gradient-animation 18s ease infinite;
+}
+
+.lightbox {
+  background-color: var(--lgrey);
+  border-radius: 4px;
+  padding: 12px;
+  color: var(--white);
+  background: linear-gradient(300deg, var(--lgrey), var(--dgrey));
+  background-size: 100% 100%;
+  animation: gradient-animation 18s ease infinite;
+  font-family: "OSI";
+  margin-top: 12px
 }
 
 .boxtitle {
@@ -244,6 +255,7 @@ div {
   background-size: 100% 100%;
   animation: gradient-animation 18s ease infinite;
 }
+
 
 @keyframes gradient-animation {
   0% {
