@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ .Content }}
+{{- partial "details.html" . -}}
 <div style="text-align:right;">
 <div>Other projects are:</div>
 {{ with .NextInSection }}
