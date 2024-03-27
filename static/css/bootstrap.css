@@ -20,6 +20,8 @@
 
   .logo {
     margin: auto;
+    text-align: center;
+    display: inherit;
   }
 
   .text-column-left {
@@ -44,6 +46,8 @@
 
   .logo {
     margin: auto;
+    text-align: center;
+    display: inherit;
   }
 
   .text-column-left {

@@ -33,20 +33,12 @@ body * {
 }
 
 .logo {
-  font-family: "OSBI";
-  font-size: 20px;
-  text-align: left;
-  text-transform: uppercase;
-  margin-right: auto;
-  line-height: 42px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo:hover {
-  background: linear-gradient(300deg, #c0ffbb, #a8ffa1);
-  background-size: 100% 100%;
-  animation: gradient-animation 18s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .LogoDot {
@@ -86,6 +78,11 @@ h2 {
   animation: gradient-animation 18s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.navitems{
+  display:inherit;
+  text-align:center;
 }
 
 .makeInline {
@@ -295,6 +292,10 @@ div {
   .nav-link {
   color: var(--white);  
   }
+
+  .logo {
+    background-image:url("/logonight.svg")
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -313,4 +314,7 @@ div {
   .nav-link {
   color: var(--black);  
   }
+
+  .logo {
+    background-image:url("/logoday.svg")
 }
