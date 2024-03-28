@@ -26,6 +26,11 @@ img[src$='#img'] {
   border-radius: 4px;
   object-fit: cover;
   width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+img[src$='#img']:hover {
+  border-radius: 55px!important;
 }
 
 body * {
@@ -36,6 +41,7 @@ body * {
   width: 200px;
   background-repeat: no-repeat;
   background-position: center;
+  background-image:url("/logonight.svg")
 }
 
 .logo:hover {
@@ -83,6 +89,7 @@ h2 {
 .navitems{
   display:inherit;
   text-align:center;
+  padding:10px;
 }
 
 .makeInline {
@@ -105,6 +112,11 @@ h2 {
   background: linear-gradient(300deg, var(--lgreen), var(--dgreen));
   background-size: 100% 100%;
   animation: gradient-animation 18s ease infinite;
+  transition: all 0.2s ease-in-out;
+}
+
+.box:hover{
+  border-radius:45px;
 }
 
 .lightbox {
@@ -171,6 +183,11 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.coverimage:hover {
+  border-radius:55px
 }
 
 .footer {
@@ -235,9 +252,9 @@ div {
 }
 
 .shadow {
-  -webkit-box-shadow: 3px 3px 50px -20px rgba(0, 0, 0, 0.33);
-  -moz-box-shadow: 3px 3px 50px -20px rgba(0, 0, 0, 0.33);
-  box-shadow: 3px 3px 50px -20px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: 3px 3px 50px -20px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 3px 3px 50px -20px rgba(0, 0, 0, 0.23);
+  box-shadow: 3px 3px 50px -20px rgba(0, 0, 0, 0.23);
 }
 
 .button {
@@ -250,7 +267,7 @@ div {
   padding-bottom: 7px;
   border-radius: 40px;
   text-decoration: none;
-  transition: 0.3s ease-out;
+  transition: 0.2s ease-out;
 }
 
 
