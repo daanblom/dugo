@@ -1,8 +1,8 @@
 :root {
-  --white: #f9fbfbFF;
-  --black: #130e13FF;
-  --lgreen: #c0ffbbFF;
-  --dgreen: #a8ffa1FF;
+  --white: #fffae2FF;
+  --black: #050a00FF;
+  --lgreen: #110111FF;
+  --dgreen: #050a00FF;
   --lgrey: #201c2077;
   --dgrey: #201b2077;
 }
@@ -75,7 +75,7 @@ h2 {
 .blogtitle {
   font-family: "OS";
   text-decoration: none;
-  font-size: 32px;
+  font-size: 36px;
 }
 
 .blogtitle:hover {
@@ -106,13 +106,14 @@ h2 {
 
 .box {
   background-color: var(--lgreen);
-  border-radius: 4px;
+  border-radius: 7px;
   padding: 12px;
-  color: var(--black);
   background: linear-gradient(300deg, var(--lgreen), var(--dgreen));
   background-size: 100% 100%;
   animation: gradient-animation 18s ease infinite;
   transition: all 0.2s ease-in-out;
+  background: linear-gradient( 90deg, var(--black), var(--black)) padding-box, linear-gradient(to right, #ffffff10, #232323) border-box;
+  border: 3px solid transparent; 
 }
 
 .box:hover{
@@ -133,7 +134,6 @@ h2 {
 
 .boxtitle {
   font-size: 36px;
-  color: var(--black);
   margin-bottom: 14px;
 }
 
@@ -216,7 +216,7 @@ a.nav-link {
 }
 
 .nav-link:hover {
-  color: var(--dgreen);
+  color: var(--white);
 }
 
 div {
