@@ -20,21 +20,11 @@
 
   .logo {
     margin: auto;
+    margin-bottom:10px;
     text-align: center;
     display: inherit;
   }
 
-  .text-column-left {
-    width: 50%;
-  }
-  
-  .text-column-right {
-    width: 50%;
-  }
-
-  .boxtitle {
-    margin-top: 0px;
-  }
 }
 
 @media (min-width: 576px) {
@@ -50,17 +40,6 @@
     display: inherit;
   }
 
-  .text-column-left {
-    width: 50%;
-  }
-  
-  .text-column-right {
-    width: 50%;
-  }
-
-  .boxtitle {
-    margin-top: 0px;
-  }
 }
 
 @media (min-width: 768px) {
@@ -76,16 +55,6 @@
     margin-right: auto;
   }
 
-  .text-column-left {
-    width: 33.3333%;
-  }
-  
-  .text-column-right {
-    width: 33.3333%;
-  }
-
-  .boxtitle {
-    margin-top: -14px;
 }
 
 @media (min-width: 992px) {
@@ -117,9 +86,4 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-}
-
-.nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
 }

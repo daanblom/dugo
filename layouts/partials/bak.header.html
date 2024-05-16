@@ -1,7 +1,7 @@
 <div id="nav-border" class="container">
     <nav id="nav" class="nav justify-content-center"><a class="logo" style="text-decoration:none;" href="/">&nbsp;</a><div class="navitems">
         {{ range .Site.Menus.main }}
-        <a class="nav-link" href="{{ .URL }}" data-emoji="{{ if eq .Name "Pictures" }}📷{{ else if eq .Name "Animation" }}🚀{{ else if eq .Name "Contact" }}📫{{ end }}" data-hover-emoji="{{ if eq .Name "Pictures" }}📸{{ else if eq .Name "Animation" }}🪐{{ else if eq .Name "Contact" }}📬{{ end }}">
+        <a class="nav-link" href="{{ .URL }}">
         {{ if .Pre }}
         {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
         {{ $icon }}
@@ -13,4 +13,3 @@
         </div>
     </nav>
 </div>
-

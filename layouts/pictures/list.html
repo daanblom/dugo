@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ range .Pages.ByPublishDate.Reverse }}
 <p>
-    <h3><a class="blogtitle" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <div><a class="blogtitle" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
     <a class="summary" href="{{ .RelPermalink }}">
         <p>{{ .Summary }}</p>
     </a>

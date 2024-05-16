@@ -1,11 +1,15 @@
 {{/* image-right.html */}}
-<div class="two-column">
-  <div class="text-column-left box">
-    <div class="boxtitle">{{ .Get "title" }}</div>
-    {{ .Get "text" }}
+<div class="row gx-4">
+  <div class="col-md-6 col-lg-4 p-2 flex">
+    <div class="padder textbox fill">
+      <div class="float">
+      <div class="boxtitle">{{ .Get "title" }}</div>
+      {{ .Get "text" }}
+      </div>
+    </div>
   </div>
-  <div class="image-column-left">
-  <img class="coverimage" src="{{ .Get "image" }}">
+  <div class="col-md-6 col-lg-8 p-2">
+    <img class="coverimage" src="{{ .Get "image" }}">
   </div>
 </div>
 
