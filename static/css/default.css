@@ -1,10 +1,10 @@
 :root {
   --white: #fffae2FF;
   --black: #050a00FF;
-  --lgreen: #002300FF;
-  --dgreen: #050a00FF;
-  --lgrey: #201c2077;
-  --dgrey: #201b2077;
+  --primary: #002300FF;
+  --secondary: #050a00FF;
+  --grey1: #201c2077;
+  --grey2: #201b2077;
 }
 
 html, body {
@@ -126,10 +126,10 @@ h2 {
 
 .textbox {
   border-radius: 8px;
-  background:url("/img/noise.webp"), linear-gradient(300deg, var(--lgreen), var(--dgreen));
+  background:url("/img/noise.webp"), linear-gradient(300deg, var(--primary), var(--secondary));
   background-size: 100%, 100%;
   transition: all 0.2s cubic-bezier(.41,.06,.24,.99);
-  border: 1px solid var(--lgreen); 
+  border: 1px solid var(--primary); 
 }
 
 .textbox:hover{
@@ -137,11 +137,11 @@ h2 {
 }
 
 .lightbox {
-  background-color: var(--lgrey);
+  background-color: var(--grey1);
   border-radius: 4px;
   padding: 12px;
   color: var(--white);
-  background: linear-gradient(300deg, var(--lgrey), var(--dgrey));
+  background: linear-gradient(300deg, var(--grey1), var(--grey2));
   background-size: 100% 100%;
   animation: gradient-animation 18s ease infinite;
   font-family: "OSI";
@@ -249,7 +249,7 @@ div {
 
 .button:hover {
   border: 2px solid #f9fbfd;
-  background: linear-gradient(300deg, var(--lgreen), var(--dgreen));
+  background: linear-gradient(300deg, var(--primary), var(--secondary));
   background-size: 100% 100%;
   animation: gradient-animation 18s ease infinite;
 }
@@ -316,7 +316,7 @@ div {
     background-size: 100%, 100%;
     animation: gradient-animation 18s ease infinite;
     transition: all 0.2s cubic-bezier(.41,.06,.24,.99);
-    border: 1px solid var(--lgrey); 
+    border: 1px solid var(--grey1); 
   }
 
   ::selection {

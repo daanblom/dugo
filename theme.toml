@@ -3,13 +3,14 @@
 
 name = "Dugo"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = "A clean hugo template using Bootstrap for its CSS"
+licenselink = "https://github.com/daanblom/dugo/blob/master/LICENSE"
+description = "A hugo theme developed for my personal portfolio website"
 homepage = "http://github.com/daanblom/dugo"
-tags = ["HUGO", "Minimal", "Bootstrap", "Portfolio"]
+tags = ["Hugo", "Minimal", "Bootstrap", "Portfolio", "Responsive", "darkmode", lightmode]
 features = []
 min_version = "0.41.0"
 
 [author]
   name = "Daan Blom"
   homepage = "https://github.com/daanblom/dugo"
+  repo = "https://github.com/daanblom/dugo"
