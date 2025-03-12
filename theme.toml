@@ -1,16 +1,16 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Dugo"
+name = "dugo"
 license = "MIT"
 licenselink = "https://github.com/daanblom/dugo/blob/master/LICENSE"
 description = "A hugo theme developed for my personal portfolio website"
 homepage = "http://github.com/daanblom/dugo"
-tags = ["Hugo", "Minimal", "Bootstrap", "Portfolio", "Responsive", "darkmode", lightmode]
+tags = ["Hugo", "Minimal", "Bootstrap", "Portfolio", "Responsive", "darkmode", "lightmode"]
 features = []
 min_version = "0.41.0"
 
 [author]
   name = "Daan Blom"
-  homepage = "https://github.com/daanblom/dugo"
+  homepage = "https:daanblom.com"
   repo = "https://github.com/daanblom/dugo"
