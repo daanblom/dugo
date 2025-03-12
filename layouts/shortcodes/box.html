@@ -1,4 +1,4 @@
 {{/* box.html */}}                       
 <div class="textbox" style="margin-top: 40px;">   
-   {{ .Get "text" }}                   
+   {{ .Get "text" | markdownify  }}                   
 </div>                                                                        

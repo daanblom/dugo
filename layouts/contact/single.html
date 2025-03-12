@@ -1,3 +1,6 @@
 {{ define "main" }}
 {{ .Content }}
+{{ range (.Paginate (where site.RegularPages “Section” “blog” | first 3)).Pages }}
+{{ .Render “summary” }}
+{{ end }}
 {{ end }}

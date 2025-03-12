@@ -2,8 +2,8 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
-        {{- partial "header.html" . -}}
         <div class="container">
+            {{- partial "header.html" . -}}
             {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}

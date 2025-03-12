@@ -4,7 +4,7 @@
     <div class="padder textbox fill">
       <div class="float">
       <div class="boxtitle">{{ .Get "title" }}</div>
-      {{ .Get "text" }}
+      {{ .Get "text" | markdownify }}
       </div>
     </div>
   </div>
@@ -12,4 +12,3 @@
     <img class="coverimage" src="{{ .Get "image" }}">
   </div>
 </div>
-

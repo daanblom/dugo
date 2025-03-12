@@ -1,8 +1,51 @@
-<div id="nav-border" class="container">
-    <nav id="nav" class="nav justify-content-center"><a class="logo" style="text-decoration:none;" href="/">&nbsp;</a><div class="navitems">
+<div id="nav-border">
+    <!--<nav id="nav" class="nav justify-content-center"><a class="logo" style="text-decoration:none;" href="/">&nbsp;</a><div class="navitems">-->
+    <nav id="nav" class="nav justify-content-center">
+    <canvas id="canvas" width="500px" height="55px" class="logo" ></canvas>
+
+<script src="https://unpkg.com/@rive-app/canvas"></script>
+<script>
+  const canvasElement = document.getElementById("canvas");
+
+  // Define the state machines for each page
+  const stateMachines = {
+    "/": "Home",
+    "/pictures/": "Pictures",
+    "/animation/": "Animation", 
+    "/contact/": "Contact"
+  };
+
+  // Get the current page path
+  const currentPage = window.location.pathname;
+
+  // Debugging: log the current path
+  console.log("Current page:", currentPage);
+
+  // Choose the appropriate state machine based on the current page
+  const stateMachine = stateMachines[currentPage] || "Home";
+
+  // Debugging: log the selected state machine
+  console.log("Using state machine:", stateMachine);
+
+  const r = new rive.Rive({
+    src: "https://test.daanblom.xyz/daanblomdotcom.riv",
+    canvas: canvasElement,
+    autoplay: true,
+    stateMachines: stateMachine,
+    onLoad: () => {
+      // Ensure the drawing surface matches the canvas size and device pixel ratio
+      r.resizeDrawingSurfaceToCanvas();
+    },
+  });
+
+  // Add an event listener for a click on the canvas to redirect to the URL
+  canvasElement.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+</script>
+    <div class="navitems">
         {{ range .Site.Menus.main }}
     <a class="nav-link" href="{{ .URL }}" data-emoji="{{ if eq .Name "Pictures" }}📷{{ else if eq .Name "Animation" }}🚀{{ else if eq .Name "Blog" }}📁{{ else if eq .Name "Contact" }}📫{{ end }}" data-hover-emoji="{{ if eq .Name "Pictures" }}📸{{ else if eq .Name "Animation" }}🪐{{ else if eq .Name "Blog" }}📂{{ else if eq .Name "Contact" }}📬{{ end }}">
-
         {{ if .Pre }}
         {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
         {{ $icon }}
@@ -14,4 +57,3 @@
         </div>
     </nav>
 </div>
-
