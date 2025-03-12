@@ -1,0 +1,16 @@
+{{/* rive.html */}}                       
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+    <script>
+      const r = new rive.Rive({
+        src: "https://test.daanblom.xyz/daanblomdotcom.riv",
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        stateMachines: "StateMachine",
+        onLoad: () => {
+          // Ensure the drawing surface matches the canvas size and device pixel ratio
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+    </script>

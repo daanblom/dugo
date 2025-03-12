@@ -1,0 +1,14 @@
+{{/* image-blogheader.html */}}
+<div class="row gx-4">
+  <div class="col-md-6 col-lg-4 p-2 flex">
+    <div class="padder textbox fill">
+      <div class="float">
+      <h1>{{ .Get "title" }}</h1>
+        <p>{{ .Get "date" }}<p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-8 p-2">
+    <img class="coverimage" src="{{ .Get "image" }}">
+  </div>
+</div>
