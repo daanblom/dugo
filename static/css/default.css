@@ -11,6 +11,13 @@
   --info: #F0B37566;
 }
 
+.logo-fallback {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -357,7 +364,7 @@ div {
 }
 
 @media (prefers-color-scheme: light) {
-  html body {
+  html, body {
   background-color: var(--white);
   }
 
