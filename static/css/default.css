@@ -64,9 +64,19 @@ img[src$='#img']:hover {
   border-radius: 55px!important;
 }
 
+.video-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+}
+
 .video {
-  width:100%;
-  
+    width: 100%;
+    max-width: 100%;
+    display: block;
 }
 
 body * {
@@ -291,54 +301,62 @@ div {
 .notice {
     position: relative;
     padding: 1em 1em 2em 2.5em;
-    margin: -5px;
-    margin-bottom: .5em;
-    margin-top: .5em;
-    border-radius: 4px;
-  
-    p:last-child {
-      margin-bottom: 0;
-    }
+    margin: 0.5em 0;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    p{
-      margin-left: 20px;
+.notice p:last-child {
+    margin-bottom: 0;
+}
+
+.notice p {
+    margin-left: 20px;
+}
+
+.notice .notice-title {
+    position: absolute;
+    left: 16px;
+    margin-top: 14px;
+    font-size: 1.2em;
+}
+
+.notice .notice-title .notice-icon {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.notice.notice-warning {
+    border: 1px solid var(--warning);
+}
+
+.notice.notice-info {
+    border: 1px solid var(--info);
+}
+
+.notice.notice-note {
+    border: 1px solid var(--note);
+}
+
+.notice.notice-tip {
+    border: 1px solid var(--tip);
+}
+
+/* Add mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+    .notice {
+        margin: 0.5em 0;
+        padding: 1em 1em 2em 2em;
     }
-  
-    .notice-title {
-      position: absolute;
-      left: 16px;
-      margin-top: 14px;
-      font-size: 1.2em;
-  
-      .notice-icon {
-        width: 1.2em;
-        height: 1.2em;
-      }
-    }
-  
-    &.notice-warning {
-      border-radius: 8px;
-      border: 1px solid var(--warning); 
-    }
-  
-    &.notice-info {
-      border-radius: 8px;
-      border: 1px solid var(--info); 
-    }
-  
-    &.notice-note {
-      border-radius: 8px;
-      border: 1px solid var(--note); 
-    }
-  
-    &.notice-tip {
-      border-radius: 8px;
-      border: 1px solid var(--tip); 
+    
+    .notice p {
+        margin-left: 10px;
     }
 }
 
 @media (prefers-color-scheme: dark) {
-  html body {
+html, body {
   background-color: var(--black);
   }
 
@@ -397,4 +415,3 @@ div {
   }
 
 }
-
