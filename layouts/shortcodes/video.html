@@ -1,28 +1,105 @@
 {{/* video.html */}}                       
-<div class="roundedCorners gx-4">
-	<video controls crossorigin playsinline poster="" width="100%" class="video">
-		 <source src="/vid/Reel-DaanBlom.mp4" type="video/mp4" size="1080">
-	</video>
-  <details>
-    <br><br>
-  <summary>Shot by shot discription</summary>
-		<p>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-			00:02 - Project title, role<br>
-		</p>
-</details>
-</div>
+  <link rel="stylesheet" href="/css/plyr.css" />
+  <script src="/js/plyr.js"></script>
+  <style>
+    .plyr-container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .plyr {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+<div class="plyr-container video-container gx-4">
+	<video id="plyr-player" class="plyr" crossorigin playsinline controls>
+		<source src="/Reel-DaanBlom.mp4" type="video/mp4" size="1080">
+	  </video>
+	</div>
+	<br>
+	<details>
+	<summary>Shot by shot discription</summary>
+		  <p>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+			  00:02 - Project title, role<br>
+		  </p>
+  </details>
+  </div>
+
+  
+  <script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  // Initialize Plyr with enhanced options
+	  const player = new Plyr('#plyr-player', {
+		// Controls configuration
+		controls: [
+		  'play-large',  // The large play button in the center
+		  'play',        // Play/pause playback
+		  'progress',    // The progress bar and scrubber
+		  'current-time', // Current time of playback
+		  'duration',    // Total duration
+		  'mute',        // Toggle mute
+		  'volume',      // Volume control
+		  // 'captions',    // Toggle captions
+		  // 'settings',    // Settings menu
+		  // 'pip',         // Picture-in-picture (supported browsers)
+		  'airplay',     // AirPlay (supported browsers)
+		  'fullscreen'   // Toggle fullscreen
+		],
+		
+		// Playback settings
+		autoplay: false,
+		muted: false,
+		clickToPlay: true,  // Click on video to play/pause
+		keyboard: { focused: true, global: false },  // Keyboard shortcuts
+		
+		// Display settings
+		displayDuration: true,
+		invertTime: false,
+		toggleInvert: false,
+		hideControls: true,  // Hide controls when playing
+		resetOnEnd: false,   // Reset to initial state after playback
+		
+		// Quality settings (if available)
+		quality: {
+		  default: 1080,
+		  options: [1080, 720, 480]
+		},
+		
+		// Speed settings
+		speed: {
+		  selected: 1,
+		  options: [0.5, 0.75, 1, 1.25, 1.5, 2]
+		},
+		
+		// Localization
+		i18n: {
+		  restart: 'Restart',
+		  rewind: 'Rewind {seektime}s',
+		  play: 'Play',
+		  pause: 'Pause',
+		  fastForward: 'Forward {seektime}s',
+		  seek: 'Seek',
+		  seekLabel: '{currentTime} of {duration}',
+		  played: 'Played',
+		  buffered: 'Buffered',
+		  currentTime: 'Current time',
+		  duration: 'Duration'
+		}
+	  });
+	});
+  </script>

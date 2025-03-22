@@ -9,6 +9,7 @@
   --tip: #6CE09266;
   --note: #6CB9E066;
   --info: #F0B37566;
+  --magic: #ee44dd66;
 }
 
 .logo-fallback {
@@ -70,7 +71,7 @@ img[src$='#img']:hover {
     overflow: hidden;
     padding: 0;
     margin: 0;
-    border-radius: 8px;
+    border-radius: 8px
 }
 
 .video {
@@ -341,6 +342,10 @@ div {
 
 .notice.notice-tip {
     border: 1px solid var(--tip);
+}
+
+.notice.notice-magic {
+    border: 1px solid var(--magic);
 }
 
 /* Add mobile-specific adjustments */
