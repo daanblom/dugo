@@ -5,11 +5,11 @@
   --secondary: #050a00FF;
   --grey1: #201c2077;
   --grey2: #201b2077;
-  --warning: #E06C6C66;
-  --tip: #6CE09266;
-  --note: #6CB9E066;
-  --info: #F0B37566;
-  --magic: #ee44dd66;
+  --warning: #E06C6C88;
+  --tip: #6CE09288;
+  --note: #6CB9E088;
+  --info: #F0B37588;
+  --magic: #ee44dd88;
 }
 
 .logo-fallback {
@@ -388,7 +388,7 @@ html, body {
 
 @media (prefers-color-scheme: light) {
   html, body {
-  background-color: var(--white);
+  background: url("/img/noise_light.webp");
   }
 
   h1, h2, h3, p, div, a {
@@ -408,7 +408,7 @@ html, body {
   }
 
   .textbox {
-    background: var(--white);
+    background: transparent;
     background-size: 100%, 100%;
     animation: gradient-animation 18s ease infinite;
     transition: all 0.2s cubic-bezier(.41,.06,.24,.99);
