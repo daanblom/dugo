@@ -41,7 +41,7 @@ table, th, td {
 
 @font-face {
   font-family: "OSBI";
-  src: URL("../fonts/OpenSauceOne-BlackItalic.ttf") format("truetype");
+  src: URL("/fonts/OpenSauceOne-BlackItalic.ttf") format("truetype");
 }
 
 @font-face {
@@ -118,13 +118,11 @@ a {
 
 h1 {
   font-family: "OSBI";
-  /*text-transform: uppercase;*/
   font-size: 26px;
 }
 
 h2 {
   font-family: "OSBI";
-  /*text-transform: uppercase;*/
   font-size: 22px;
 }
 
@@ -138,9 +136,6 @@ h2 {
   text-decoration: none;
   font-size: 36px;
 }
-
-/*.blogtitle:hover {*/
-/*}*/
 
 .navitems{
   display:inherit;
@@ -403,14 +398,9 @@ html, body {
   color: var(--black);  
   }
 
-  .logo {
-    /*background-image:url("/img/logoday.svg")*/
-  }
-
   .textbox {
     background: transparent;
     background-size: 100%, 100%;
-    animation: gradient-animation 18s ease infinite;
     transition: all 0.2s cubic-bezier(.41,.06,.24,.99);
     border: 1px solid var(--grey1); 
   }
