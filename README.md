@@ -1,4 +1,6 @@
-# Dugo - A Modern Portfolio Hugo Theme
+# In action on [daanblom.com](https://daanblom.com)
+
+## Dugo - A Modern Portfolio Hugo Theme
 
 [![Hugo](https://img.shields.io/badge/Hugo-0.41.0+-blue.svg)](https://gohugo.io)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/daanblom/dugo/blob/master/LICENSE)
@@ -94,7 +96,3 @@ This theme is licensed under the MIT License - see the [LICENSE](LICENSE) file f
 ## 📞 Support
 
 For support, please open an issue in the [GitHub repository](https://github.com/daanblom/dugo/issues).
-
----
-
-Made with ❤️ by [Daan Blom](https://daanblom.com)
