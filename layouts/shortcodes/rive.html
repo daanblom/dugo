@@ -1,16 +1,21 @@
-{{/* rive.html */}}                       
-    <canvas id="canvas" width="500" height="500"></canvas>
+{{/* rive.html */}}
+{{ $scriptSrc := .Get "script" | default "https://unpkg.com/@rive-app/canvas" }}
+{{ $riveSrc := .Get "src" | default "https://test.daanblom.xyz/daanblomdotcom.riv" }}
+{{ $width := .Get "width" | default "500" }}
+{{ $height := .Get "height" | default "500" }}
+{{ $stateMachine := .Get "stateMachine" | default "StateMachine" }}
 
-    <script src="https://unpkg.com/@rive-app/canvas"></script>
-    <script>
-      const r = new rive.Rive({
-        src: "https://test.daanblom.xyz/daanblomdotcom.riv",
-        canvas: document.getElementById("canvas"),
-        autoplay: true,
-        stateMachines: "StateMachine",
-        onLoad: () => {
-          // Ensure the drawing surface matches the canvas size and device pixel ratio
-          r.resizeDrawingSurfaceToCanvas();
-        },
-      });
-    </script>
+<canvas id="canvas" width="{{ $width }}" height="{{ $height }}"></canvas>
+
+<script src="{{ $scriptSrc }}"></script>
+<script>
+  const r = new rive.Rive({
+    src: "{{ $riveSrc }}",
+    canvas: document.getElementById("canvas"),
+    autoplay: true,
+    stateMachines: "{{ $stateMachine }}",
+    onLoad: () => {
+      r.resizeDrawingSurfaceToCanvas();
+    },
+  });
+</script>
