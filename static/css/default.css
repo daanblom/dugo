@@ -372,10 +372,6 @@ html, body {
   color: var(--white);  
   }
 
-  .logo {
-    /*background-image:url("/img/logonight.svg")*/
-  }
-
   ::selection {
     color: #ee77ab;
   }
