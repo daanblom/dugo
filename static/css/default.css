@@ -34,9 +34,9 @@ html, body {
 }
 
 table, th, td {
-  border: 1px solid var(--white);
+  border: 1px solid transparent;
   border-collapse: collapse;
-  padding: 3px;
+  padding: 5px;
 }
 
 @font-face {
