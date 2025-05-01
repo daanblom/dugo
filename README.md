@@ -1,5 +1,3 @@
-# In action on [daanblom.com](https://daanblom.com)
-
 ## Dugo - A Modern Portfolio Hugo Theme
 
 [![Hugo](https://img.shields.io/badge/Hugo-0.41.0+-blue.svg)](https://gohugo.io)
