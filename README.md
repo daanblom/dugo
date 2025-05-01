@@ -14,7 +14,7 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 - 📱 **Responsive**: Fully responsive design for all devices
 - 🎭 **Bootstrap Integration**: Built on Bootstrap for reliable styling
 - 📸 **Photo Gallery**: Dedicated picture showcase section
-- 📸 **Showreel page**: Dedicated page to display showreel using the [plyr.io](https://plyr.io) player
+- 🍿 **Showreel page**: Dedicated page to display showreel using the [plyr.io](https://plyr.io) player
 - 🎬 **Animation Support**: Includes Rive animations
 - 📝 **Blog Support**: Built-in blog functionality
 
