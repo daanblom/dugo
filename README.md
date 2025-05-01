@@ -61,17 +61,17 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 ```
 dugo/
 ├── archetypes/     # Content templates
-├── data/          # Data files
-├── layouts/       # Theme templates
-│   ├── _default/  # Default templates
-│   ├── animation/ # Animation components
-│   ├── blog/      # Blog templates
-│   ├── contact/   # Contact section
-│   ├── pictures/  # Picture gallery
-│   ├── partials/  # Reusable components
-│   └── shortcodes/# Custom shortcodes
-├── static/        # Static assets
-└── theme.toml     # Theme configuration
+├── data/           # Data files
+├── layouts/        # Theme templates
+│   ├── _default/   # Default templates
+│   ├── animation/  # Animation components
+│   ├── blog/       # Blog templates
+│   ├── contact/    # Contact section
+│   ├── pictures/   # Picture gallery
+│   ├── partials/   # Reusable components
+│   └── shortcodes/ # Custom shortcodes
+├── static/         # Static assets
+└── theme.toml      # Theme configuration
 ```
 
 ## 🛠️ Shortcodes
