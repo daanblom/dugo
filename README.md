@@ -57,6 +57,22 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
    hugo server -D
    ```
 
+6. **Set up security features**
+   ```bash
+   # Generate a secure CSRF secret
+   export CSRF_SECRET=$(openssl rand -base64 32)
+   
+   # Or using Python
+   export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
+   
+   # Add to your shell's rc file for persistence
+   echo "export CSRF_SECRET=$CSRF_SECRET" >> ~/.zshrc  # or ~/.bashrc
+   ```
+
+   For production deployments, make sure to:
+   - Set the `CSRF_SECRET` environment variable in your deployment environment
+   - Configure security headers at the web server level (see [Security Headers](#security-headers) section)
+
 ## 📁 Theme Structure
 
 ```
