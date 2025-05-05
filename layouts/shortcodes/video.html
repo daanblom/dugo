@@ -22,7 +22,7 @@
 </style>
 
 <div class="plyr-container video-container gx-4">
-  <video id="plyr-player" class="plyr" crossorigin playsinline controls {{ if $thumbnail }}poster="{{ $thumbnail }}"{{ end }}>
+  <video id="plyr-player" class="plyr" crossorigin="anonymous" playsinline controls {{ if $thumbnail }}poster="{{ $thumbnail }}"{{ end }}>
     <source src="{{ $videoWebm }}" type="video/webm" size="1080">
     <source src="{{ $videoMp4 }}" type="video/mp4" size="1080">
   </video>
