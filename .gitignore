@@ -1,1 +1,20 @@
 todo.md
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Hugo
+/public/
+/resources/
+/hugo_stats.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

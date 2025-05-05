@@ -15,6 +15,7 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 - 🍿 **Showreel page**: Dedicated page to display showreel using the [plyr.io](https://plyr.io) player
 - 🎬 **Animation Support**: Includes Rive animations
 - 📝 **Blog Support**: Built-in blog functionality
+- 🔒 **Security Features**: Built-in CSRF protection and security headers
 
 ## 🚀 Quick Start
 
@@ -169,3 +170,46 @@ This theme is licensed under the MIT License - see the [LICENSE](LICENSE) file f
 ## 📞 Support
 
 For support, please open an issue in the [GitHub repository](https://github.com/daanblom/dugo/issues).
+
+## 🔒 Security Setup
+
+The theme includes several security features that require environment variables to be set:
+
+1. **CSRF Protection**
+   - Set the `CSRF_SECRET` environment variable:
+     ```bash
+     # Generate a secure secret
+     export CSRF_SECRET=$(openssl rand -base64 32)
+     
+     # Or using Python
+     export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
+     ```
+   - Add this to your deployment environment
+   - For local development, add to your shell's rc file (e.g., `.bashrc`, `.zshrc`)
+
+2. **Security Headers**
+   - The theme includes security headers by default
+   - For production, consider adding these headers at the web server level
+   - See the [Security Headers](#security-headers) section for details
+
+### Security Headers
+
+The theme includes the following security headers by default:
+
+```html
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://player.vimeo.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' https://www.youtube.com https://player.vimeo.com; frame-src 'self' https://www.youtube.com https://player.vimeo.com; connect-src 'self' https://www.youtube.com https://player.vimeo.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+```
+
+For production deployments, it's recommended to set these headers at the web server level. Here's an example for Nginx:
+
+```nginx
+add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://player.vimeo.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' https://www.youtube.com https://player.vimeo.com; frame-src 'self' https://www.youtube.com https://player.vimeo.com; connect-src 'self' https://www.youtube.com https://player.vimeo.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;";
+add_header X-Content-Type-Options "nosniff";
+add_header X-Frame-Options "DENY";
+add_header Referrer-Policy "strict-origin-when-cross-origin";
+add_header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()";
+```
