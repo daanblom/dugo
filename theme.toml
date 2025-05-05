@@ -14,3 +14,7 @@ min_version = "0.41.0"
   name = "Daan Blom"
   homepage = "https:daanblom.com"
   repo = "https://github.com/daanblom/dugo"
+
+[params]
+  enableCSRF = true
+  csrfSecret = "{{ getenv "CSRF_SECRET" }}"

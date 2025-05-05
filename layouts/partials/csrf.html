@@ -1,0 +1,11 @@
+{{/* CSRF Protection Partial */}}
+{{- if .Site.Params.enableCSRF -}}
+    {{- $csrfSecret := getenv "CSRF_SECRET" -}}
+    {{- if not $csrfSecret -}}
+        {{- warnf "CSRF_SECRET environment variable is not set. CSRF protection is disabled." -}}
+    {{- else -}}
+        {{- $csrfToken := (md5 (printf "%s%s" (now.Unix) $csrfSecret)) -}}
+        <input type="hidden" name="csrf_token" value="{{ $csrfToken }}">
+        <meta name="csrf-token" content="{{ $csrfToken }}">
+    {{- end -}}
+{{- end -}} 
