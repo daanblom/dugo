@@ -99,6 +99,15 @@ Dugo provides several shortcodes to help you create beautiful and responsive lay
 
 All image shortcodes are based on Bootstrap's grid system and use the `coverimage` class for consistent image styling.
 
+- `gallery.html`: Creates a gallery section with optional top and bottom text
+  ```html
+  {{< gallery 
+    top="Your introduction text here"
+    bottom="Your outro text here"
+  >}}
+  ```
+  This shortcode will display your introduction text, followed by all pictures in the current section, and end with your outro text.
+
 - `image-1-3.html`: Creates a two-column layout with a 1:3 ratio
   ```html
   {{< image-1-3 image1="path/to/image1.jpg" image2="path/to/image2.jpg" >}}
