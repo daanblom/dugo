@@ -1,8 +1,8 @@
 const CONFIG = {
     CANVAS_HEIGHT: 55,
     RIVE_SOURCE: {
-      light: 'https://test.daanblom.xyz/daanblomdotcom-light.riv',
-      dark: 'https://test.daanblom.xyz/daanblomdotcom-dark.riv'
+      light: '/daanblomdotcom-light.riv',
+      dark: '/daanblomdotcom-dark.riv'
     },
     DEBOUNCE_DELAY: 250,
     STATE_MACHINES: {
