@@ -1,9 +1,3 @@
 {{ define "main" }}
-<p>I am mostly a tech guy. But when it comes to photography, I prefer things the classical way. Exploring with a variety of cameras, types of film and (printing) techniques.</p>
-{{ range .Pages.ByPublishDate.Reverse }}
-    <a class="summary" href="{{ .RelPermalink }}">
-        {{ .Summary }}
-    </a>
-{{ end }}
-<div><p style="text-align: center;">see more on <a href="https://instagram.com/daanblom" target="_blank">instagram.com/daanblom</a>🤳</p></div>
+{{ .Content }}
 {{ end }}

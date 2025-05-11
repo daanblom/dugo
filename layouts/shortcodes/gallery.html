@@ -1,0 +1,16 @@
+{{ $top := .Get "top" | default "" }}
+{{ $bottom := .Get "bottom" | default "" }}
+
+{{ if $top }}
+<p>{{ $top | markdownify }}</p>
+{{ end }}
+
+{{ range .Page.Pages.ByPublishDate.Reverse }}
+    <a class="summary" href="{{ .RelPermalink }}">
+        {{ .Summary }}
+    </a>
+{{ end }}
+
+{{ if $bottom }}
+<div><p style="text-align: center;">{{ $bottom | markdownify }}</p></div>
+{{ end }} 
