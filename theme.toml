@@ -17,4 +17,7 @@ min_version = "0.41.0"
 
 [params]
   enableCSRF = true
-  csrfSecret = "{{ getenv "CSRF_SECRET" }}"
+  # Generate a secure CSRF secret using one of these commands:
+  # openssl rand -base64 32
+  # python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+  csrfSecret = "your-generated-secret-here"

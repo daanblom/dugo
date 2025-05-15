@@ -59,18 +59,21 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 
 6. **Set up security features**
    ```bash
-   # Generate a secure CSRF secret
-   export CSRF_SECRET=$(openssl rand -base64 32)
-   
+   # Generate a secure CSRF secret using one of these commands:
+   openssl rand -base64 32
    # Or using Python
-   export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
-   
-   # Add to your shell's rc file for persistence
-   echo "export CSRF_SECRET=$CSRF_SECRET" >> ~/.zshrc  # or ~/.bashrc
+   python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+   ```
+
+   Then add the generated secret to your `theme.toml` file:
+   ```toml
+   [params]
+     enableCSRF = true
+     csrfSecret = "your-generated-secret-here"
    ```
 
    For production deployments, make sure to:
-   - Set the `CSRF_SECRET` environment variable in your deployment environment
+   - Set a secure CSRF secret in your theme.toml
    - Configure security headers at the web server level (see [Security Headers](#security-headers) section)
 
 ## 📁 Theme Structure
@@ -198,19 +201,23 @@ For support, please open an issue in the [GitHub repository](https://github.com/
 
 ## 🔒 Security Setup
 
-The theme includes several security features that require environment variables to be set:
+The theme includes several security features that require configuration in the theme.toml file:
 
 1. **CSRF Protection**
-   - Set the `CSRF_SECRET` environment variable:
+   - Generate a secure CSRF secret using one of these commands:
      ```bash
-     # Generate a secure secret
-     export CSRF_SECRET=$(openssl rand -base64 32)
+     # Using OpenSSL
+     openssl rand -base64 32
      
      # Or using Python
-     export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
+     python3 -c "import secrets; print(secrets.token_urlsafe(32))"
      ```
-   - Add this to your deployment environment
-   - For local development, add to your shell's rc file (e.g., `.bashrc`, `.zshrc`)
+   - Add the generated secret to your theme.toml file:
+     ```toml
+     [params]
+       enableCSRF = true
+       csrfSecret = "your-generated-secret-here"
+     ```
 
 2. **Security Headers**
    - The theme includes security headers by default
