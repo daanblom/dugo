@@ -59,21 +59,18 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 
 6. **Set up security features**
    ```bash
-   # Generate a secure CSRF secret using one of these commands:
-   openssl rand -base64 32
+   # Generate a secure CSRF secret
+   export CSRF_SECRET=$(openssl rand -base64 32)
+   
    # Or using Python
-   python3 -c "import secrets; print(secrets.token_urlsafe(32))"
-   ```
-
-   Then add the generated secret to your `theme.toml` file:
-   ```toml
-   [params]
-     enableCSRF = true
-     csrfSecret = "your-generated-secret-here"
+   export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
+   
+   # Add to your shell's rc file for persistence
+   echo "export CSRF_SECRET=$CSRF_SECRET" >> ~/.zshrc  # or ~/.bashrc
    ```
 
    For production deployments, make sure to:
-   - Set a secure CSRF secret in your theme.toml
+   - Set the `CSRF_SECRET` environment variable in your deployment environment
    - Configure security headers at the web server level (see [Security Headers](#security-headers) section)
 
 ## 📁 Theme Structure
@@ -201,23 +198,19 @@ For support, please open an issue in the [GitHub repository](https://github.com/
 
 ## 🔒 Security Setup
 
-The theme includes several security features that require configuration in the theme.toml file:
+The theme includes several security features that require environment variables to be set:
 
 1. **CSRF Protection**
-   - Generate a secure CSRF secret using one of these commands:
+   - Set the `CSRF_SECRET` environment variable:
      ```bash
-     # Using OpenSSL
-     openssl rand -base64 32
+     # Generate a secure secret
+     export CSRF_SECRET=$(openssl rand -base64 32)
      
      # Or using Python
-     python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+     export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
      ```
-   - Add the generated secret to your theme.toml file:
-     ```toml
-     [params]
-       enableCSRF = true
-       csrfSecret = "your-generated-secret-here"
-     ```
+   - Add this to your deployment environment
+   - For local development, add to your shell's rc file (e.g., `.bashrc`, `.zshrc`)
 
 2. **Security Headers**
    - The theme includes security headers by default
@@ -229,7 +222,7 @@ The theme includes several security features that require configuration in the t
 The theme includes the following security headers by default:
 
 ```html
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://player.vimeo.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' https://www.youtube.com https://player.vimeo.com; frame-src 'self' https://www.youtube.com https://player.vimeo.com; connect-src 'self' https://www.youtube.com https://player.vimeo.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Referrer-Policy: strict-origin-when-cross-origin
@@ -239,9 +232,14 @@ Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), m
 For production deployments, it's recommended to set these headers at the web server level. Here's an example for Nginx:
 
 ```nginx
-add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://player.vimeo.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' https://www.youtube.com https://player.vimeo.com; frame-src 'self' https://www.youtube.com https://player.vimeo.com; connect-src 'self' https://www.youtube.com https://player.vimeo.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;";
-add_header X-Content-Type-Options "nosniff";
-add_header X-Frame-Options "DENY";
-add_header Referrer-Policy "strict-origin-when-cross-origin";
-add_header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()";
+add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-Frame-Options "DENY" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" always;
 ```
+
+Note that the Content-Security-Policy has been updated to include:
+- `'wasm-unsafe-eval'` for WebAssembly support
+- `https://unpkg.com` and `https://cdn.jsdelivr.net` for CDN resources
+- Removed YouTube and Vimeo domains as they're not currently used
