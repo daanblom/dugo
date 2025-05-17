@@ -12,6 +12,10 @@
   --magic: #ee44dd88;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .logo-fallback {
   font-size: 24px;
   font-weight: bold;
@@ -27,10 +31,13 @@ html, body {
   line-height: 1.4;
   background-color: var(--black);
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .container {
   flex-grow: 1;
+  width: 100%;
 }
 
 table, th, td {
@@ -82,6 +89,7 @@ img[src$='#img']:hover {
 
 body * {
   font-family: "OS";
+  box-sizing: border-box;
 }
 
 .padder {
@@ -405,4 +413,9 @@ html, body {
     color: #ed8941;
   }
 
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

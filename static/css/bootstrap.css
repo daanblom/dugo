@@ -15,7 +15,7 @@
 
   .container,
   .container-sm {
-    max-width: 540px;
+    max-width: 100%;
   }
 
   .navitems {
