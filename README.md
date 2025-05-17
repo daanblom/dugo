@@ -222,24 +222,32 @@ The theme includes several security features that require environment variables 
 The theme includes the following security headers by default:
 
 ```html
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-Referrer-Policy: strict-origin-when-cross-origin
-Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+<!-- Meta tag CSP (without frame-ancestors) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; media-src 'self' blob:; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
 ```
 
 For production deployments, it's recommended to set these headers at the web server level. Here's an example for Nginx:
 
 ```nginx
-add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;" always;
+# HTTP header CSP (includes frame-ancestors)
+add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; media-src 'self' blob:; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;" always;
 add_header X-Content-Type-Options "nosniff" always;
 add_header X-Frame-Options "DENY" always;
 add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 add_header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" always;
 ```
 
-Note that the Content-Security-Policy has been updated to include:
+Note that the Content-Security-Policy has been split into two parts:
+1. Meta tag CSP (without frame-ancestors) for client-side enforcement
+2. HTTP header CSP (with frame-ancestors) for server-side enforcement
+
+The policy includes:
+- `'unsafe-eval'` for JavaScript evaluation support
 - `'wasm-unsafe-eval'` for WebAssembly support
-- `https://unpkg.com` and `https://cdn.jsdelivr.net` for CDN resources
-- Removed YouTube and Vimeo domains as they're not currently used
+- `https://unpkg.com`, `https://cdn.jsdelivr.net`, and `https://cdn.plyr.io` for CDN resources
+- `blob:` for media and image sources
+- `frame-ancestors` directive is only set in HTTP headers as it's not supported in meta elements
