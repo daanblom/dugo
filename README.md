@@ -6,10 +6,10 @@
 Dugo is a modern, responsive Hugo theme designed specifically for portfolio websites. It features a clean, minimal design with support for both light and dark modes, making it perfect for showcasing your work and personal brand.
 
 ## Screenshots 
-![DAANBLOM_Home](https://i.ibb.co/23MPHYgZ/daanblomdotcom-home.png)
-![DAANBLOM_Animation](https://i.ibb.co/VcGTFtPb/daanblomdotcom-animation.png)
-![DAANBLOM_Photography](https://i.ibb.co/HfJx1y5q/daanblomdotcom-pictures.png)
-![DAANBLOM_Contact](https://i.ibb.co/HpkWcpyk/daanblomdotcom-contact.png)
+![DAANBLOM_Home](https://i.ibb.co/v4dmRvZX/daanblomdotcom-home.png)
+![DAANBLOM_Animation](https://i.ibb.co/1tNTCLwB/daanblomdotcom-animation.png)
+![DAANBLOM_Photography](https://i.ibb.co/ZpZYtrqx/daanblomdotcom-pictures.png)
+![DAANBLOM_Contact](https://i.ibb.co/cX7GWX97/daanblomdotcom-contact.png)
 
 ## 🌟 Features
 
