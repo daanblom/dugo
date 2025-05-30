@@ -236,7 +236,6 @@ For production deployments, it's recommended to set these headers at the web ser
 # HTTP header CSP (includes frame-ancestors)
 add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; media-src 'self' blob:; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;" always;
 add_header X-Content-Type-Options "nosniff" always;
-add_header X-Frame-Options "DENY" always;
 add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 add_header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" always;
 ```
