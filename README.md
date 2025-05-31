@@ -11,7 +11,7 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 ![DAANBLOM_Photography](https://i.ibb.co/ZpZYtrqx/daanblomdotcom-pictures.png)
 ![DAANBLOM_Contact](https://i.ibb.co/cX7GWX97/daanblomdotcom-contact.png)
 
-## 🌟 Features
+## Features
 
 - 🎨 **Modern Design**: Clean and minimal aesthetic
 - 🌓 **Dark/Light Mode**: Built-in support for both themes
@@ -23,7 +23,7 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 - 📝 **Blog Support**: Built-in blog functionality
 - 🔒 **Security Features**: Built-in CSRF protection and security headers
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Install Hugo** (version 0.41.0 or higher)
    ```bash
@@ -79,7 +79,7 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
    - Set the `CSRF_SECRET` environment variable in your deployment environment
    - Configure security headers at the web server level (see [Security Headers](#security-headers) section)
 
-## 📁 Theme Structure
+## Theme Structure
 
 ```
 dugo/
@@ -97,7 +97,7 @@ dugo/
 └── theme.toml      # Theme configuration
 ```
 
-## 🛠️ Shortcodes
+## Shortcodes
 
 Dugo provides several shortcodes to help you create beautiful and responsive layouts for your portfolio. Here's a detailed explanation of each:
 
@@ -184,25 +184,25 @@ All image shortcodes are based on Bootstrap's grid system and use the `coverimag
   ```
   Optionally, you can include timecodes by adding a `timestamps.md` file in the same directory as the video shortcode.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
 This theme is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Hugo](https://gohugo.io/) - The world's fastest framework for building websites
 - [Bootstrap](https://getbootstrap.com/) - The world's most popular CSS framework
 - [Rive](https://rive.app/) - For animation support
 
-## 📞 Support
+## Support
 
 For support, please open an issue in the [GitHub repository](https://github.com/daanblom/dugo/issues).
 
-## 🔒 Security Setup
+## Security Setup
 
 The theme includes several security features that require environment variables to be set:
 
