@@ -1,3 +1,5 @@
+✨ Live! [DAANBLOM.COM](https://daanblom.com) 
+
 ## Dugo - A Modern Portfolio Hugo Theme
 
 [![Hugo](https://img.shields.io/badge/Hugo-0.41.0+-blue.svg)](https://gohugo.io)
@@ -5,7 +7,7 @@
 
 Dugo is a modern, responsive Hugo theme designed specifically for portfolio websites. It features a clean, minimal design with support for both light and dark modes, making it perfect for showcasing your work and personal brand.
 
-## Screenshots 
+## Screenshots
 ![DAANBLOM_Home](https://i.ibb.co/v4dmRvZX/daanblomdotcom-home.png)
 ![DAANBLOM_Animation](https://i.ibb.co/1tNTCLwB/daanblomdotcom-animation.png)
 ![DAANBLOM_Photography](https://i.ibb.co/ZpZYtrqx/daanblomdotcom-pictures.png)
@@ -28,7 +30,7 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
    ```bash
    # For macOS
    brew install hugo
-   
+
    # For Windows
    choco install hugo
 
