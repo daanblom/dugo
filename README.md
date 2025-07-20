@@ -1,4 +1,5 @@
-✨ Live! [DAANBLOM.COM](https://daanblom.com) 
+> [!TIP]
+> ✨ Live! [DAANBLOM.COM](https://daanblom.com) 
 
 ## Dugo - A Modern Portfolio Hugo Theme
 
