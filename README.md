@@ -63,7 +63,7 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
    hugo server -D
    ```
 
-6. **Set up security features**
+6. **Set up security features** (for production only)
    ```bash
    # Generate a secure CSRF secret
    export CSRF_SECRET=$(openssl rand -base64 32)
