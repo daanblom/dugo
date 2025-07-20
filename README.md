@@ -21,7 +21,6 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
 - 🍿 **Showreel page**: Dedicated page to display showreel using the [plyr.io](https://plyr.io) player
 - 🎬 **Animation Support**: Includes Rive animations
 - 📝 **Blog Support**: Built-in blog functionality
-- 🔒 **Security Features**: Built-in CSRF protection and security headers
 
 ## Quick Start
 
@@ -62,22 +61,6 @@ Dugo is a modern, responsive Hugo theme designed specifically for portfolio webs
    ```bash
    hugo server -D
    ```
-
-6. **Set up security features** (for production only)
-   ```bash
-   # Generate a secure CSRF secret
-   export CSRF_SECRET=$(openssl rand -base64 32)
-   
-   # Or using Python
-   export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
-   
-   # Add to your shell's rc file for persistence
-   echo "export CSRF_SECRET=$CSRF_SECRET" >> ~/.zshrc  # or ~/.bashrc
-   ```
-
-   For production deployments, make sure to:
-   - Set the `CSRF_SECRET` environment variable in your deployment environment
-   - Configure security headers at the web server level (see [Security Headers](#security-headers) section)
 
 ## Theme Structure
 
@@ -201,58 +184,3 @@ This theme is licensed under the MIT License - see the [LICENSE](LICENSE) file f
 ## Support
 
 For support, please open an issue in the [GitHub repository](https://github.com/daanblom/dugo/issues).
-
-## Security Setup
-
-The theme includes several security features that require environment variables to be set:
-
-1. **CSRF Protection**
-   - Set the `CSRF_SECRET` environment variable:
-     ```bash
-     # Generate a secure secret
-     export CSRF_SECRET=$(openssl rand -base64 32)
-     
-     # Or using Python
-     export CSRF_SECRET=$(python3 -c "import secrets; print(secrets.token_urlsafe(32))")
-     ```
-   - Add this to your deployment environment
-   - For local development, add to your shell's rc file (e.g., `.bashrc`, `.zshrc`)
-
-2. **Security Headers**
-   - The theme includes security headers by default
-   - For production, consider adding these headers at the web server level
-   - See the [Security Headers](#security-headers) section for details
-
-### Security Headers
-
-The theme includes the following security headers by default:
-
-```html
-<!-- Meta tag CSP (without frame-ancestors) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; media-src 'self' blob:; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
-```
-
-For production deployments, it's recommended to set these headers at the web server level. Here's an example for Nginx:
-
-```nginx
-# HTTP header CSP (includes frame-ancestors)
-add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; media-src 'self' blob:; frame-src 'self'; connect-src 'self' https://unpkg.com https://cdn.jsdelivr.net https://cdn.plyr.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;" always;
-add_header X-Content-Type-Options "nosniff" always;
-add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-add_header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" always;
-```
-
-Note that the Content-Security-Policy has been split into two parts:
-1. Meta tag CSP (without frame-ancestors) for client-side enforcement
-2. HTTP header CSP (with frame-ancestors) for server-side enforcement
-
-The policy includes:
-- `'unsafe-eval'` for JavaScript evaluation support
-- `'wasm-unsafe-eval'` for WebAssembly support
-- `https://unpkg.com`, `https://cdn.jsdelivr.net`, and `https://cdn.plyr.io` for CDN resources
-- `blob:` for media and image sources
-- `frame-ancestors` directive is only set in HTTP headers as it's not supported in meta elements
