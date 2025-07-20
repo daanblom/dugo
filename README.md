@@ -6,7 +6,7 @@
 [![Hugo](https://img.shields.io/badge/Hugo-0.41.0+-blue.svg)](https://gohugo.io)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/daanblom/dugo/blob/master/LICENSE)
 
-Dugo is a modern, responsive Hugo theme designed specifically for portfolio websites. It features a clean, minimal design with support for both light and dark modes, making it perfect for showcasing your work and personal brand.
+Dugo is a clean, responsive Hugo theme designed specifically for portfolio and showcase websites. It features a minimal design that automatically switches between light and dark mode based on the users browser / system settings, as well as Rive support for interactive logo animations.
 
 ## Screenshots
 ![DAANBLOM_Home](https://i.ibb.co/v4dmRvZX/daanblomdotcom-home.png)
